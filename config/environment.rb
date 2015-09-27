@@ -7,11 +7,10 @@ Rails.application.initialize!
 ActionMailer::Base.delivery_method = :smtp
 
 ActionMailer::Base.smtp_settings = {
-  :user_name => ENV['SENDGRID_USERNAME'],
-  :password => ENV['SENDGRID_PASSWORD'],
-  :domain => 'lots-of-emails.herokuapp.com',
-  :address => 'smtp.sendgrid.net',
-  :port => 587,
+  :port           => 587,
+  :address        => "smtp.mailgun.org",
+  :domain         => 'lots-of-emails.herokuapp.com',
+  :user_name      => ENV['MAILGUN_USERNAME'],
+  :password       => ENV['MAILGUN_PASSWORD'],
   :authentication => :plain,
-  :enable_starttls_auto => true
 }
