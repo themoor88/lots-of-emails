@@ -15,6 +15,7 @@ gem 'devise'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'figaro'
+gem 'rails_admin'
 
 group :development, :test do
   gem 'byebug'
