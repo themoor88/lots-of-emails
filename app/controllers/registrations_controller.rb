@@ -1,7 +1,7 @@
 class RegistrationsController < Devise::RegistrationsController
   def create
-    super do
+    super {
       UserNotifier.welcome_email(@user).deliver
-    end
+    }
   end
 end
