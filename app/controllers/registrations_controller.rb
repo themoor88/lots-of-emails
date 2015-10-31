@@ -1,7 +1,9 @@
 class RegistrationsController < Devise::RegistrationsController
   def create
     super {
-      UserNotifier.welcome_email(@user).deliver
+      if @user.persisted?
+        UserNotifier.welcome_email(@user).deliver
+      end
     }
   end
 end
