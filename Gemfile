@@ -16,6 +16,7 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'figaro'
 gem 'rails_admin'
+gem 'sendgrid-ruby'
 
 group :development, :test do
   gem 'byebug'
