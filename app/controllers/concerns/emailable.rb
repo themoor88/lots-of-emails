@@ -8,7 +8,6 @@ module Emailable
     header.add_filter('templates', 'template_id', template_id)
 
     substitutions.each do |sub|
-      debugger
       header.add_substitution(sub[0], [sub[1]])
     end
 
