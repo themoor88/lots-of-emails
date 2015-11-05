@@ -1,6 +1,6 @@
 module Emailable
   extend ActiveSupport::Concern
-
+  # Need to change for devise and custom template ids.
   def send_email(email_info)
     # Initiating the SendGrid API
     client = SendGrid::Client.new(api_user: ENV['MAILER_USERNAME'], api_key: ENV['MAILER_PASSWORD'])
