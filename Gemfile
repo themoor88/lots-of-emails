@@ -17,6 +17,7 @@ gem 'autoprefixer-rails'
 gem 'figaro'
 gem 'rails_admin'
 gem 'sendgrid-ruby'
+gem 'devise'
 
 group :development, :test do
   gem 'byebug'
