@@ -1,9 +1,9 @@
 module Emailable
   extend ActiveSupport::Concern
-  # Need to change for devise and custom template ids.
+
   def send_email(email_info)
     # Initiating the SendGrid API
-    client = SendGrid::Client.new(api_user: ENV['MAILER_USERNAME'], api_key: ENV['MAILER_PASSWORD'])
+    client = SendGrid::Client.new(api_key: Figaro.env.sendgrid_api_key)
 
     # Using the SMTP API header to pass client information
     header = Smtpapi::Header.new
@@ -18,8 +18,8 @@ module Emailable
     required_parameters = {
       text: ' ',
       html: ' ',
-      from: 'wjkagzi@gmail.com',
-      from_name: 'Wajid',
+      from: Figaro.env.sendgrid_from_email,
+      from_name: Figaro.env.sendgrid_from_name,
       smtpapi: header
     }
 
@@ -31,22 +31,21 @@ module Emailable
     client.send(message)
   end
 
-  def send_confirmation_email(resource)
+  # This method is very generic to acccept an options paramter.
+  # The options should contain a template_id, substitutions and a recipient.
+  def setup_email_info_and_send_email(options)
     email_info = {
       email_parameters: {
-        to: resource.email,
-        to_name: resource.first_name,
-        subject: 'Thanks for joining Therapia!'
+        to: (Rails.env.development? || Rails.env.test?) ? Figaro.env.dev_email_to : options[:to],
+        to_name: options[:to_name] || '',
+        subject: ' '
       },
 
-      substitutions: {
-        '-firstName-': resource.first_name,
-        '-lastName-': resource.last_name
-      },
-
-      template_id: 'c8ac2b43-365c-400e-9009-607700fb1f90'
+      substitutions: options[:substitutions] || {},
+      template_id: options[:template_id]
     }
 
-    send_email(email_info)
+    # only send email if the ENV says so (hacky because ENV can only store strings)
+    send_email(email_info) if Figaro.env.send_email.downcase.eql?('true')
   end
 end
