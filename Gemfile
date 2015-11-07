@@ -10,13 +10,13 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'sass-rails', '~> 5.0'
-gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+gem 'bootstrap-sass'
+gem 'devise'
 gem 'figaro'
 gem 'rails_admin'
+gem 'sass-rails', '~> 5.0'
 gem 'sendgrid-ruby'
-gem 'devise'
 
 group :development, :test do
   gem 'byebug'
