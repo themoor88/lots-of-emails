@@ -27,4 +27,8 @@ class User < ActiveRecord::Base
   def devise_mailer
     UserDeviseMailer
   end
+
+  def self.ordered_by_last_name
+    self.all.sort_by{|user| user.last_name}
+  end
 end

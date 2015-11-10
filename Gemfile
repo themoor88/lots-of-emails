@@ -21,6 +21,8 @@ gem 'sendgrid-ruby'
 
 group :development, :test do
   gem 'byebug'
+  gem 'factory_girl'
+  gem 'rspec-rails'
 end
 
 group :development do
