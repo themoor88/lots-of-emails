@@ -23,6 +23,8 @@ group :development, :test do
   gem 'byebug'
   gem 'factory_girl'
   gem 'rspec-rails'
+  gem 'faker'
+  gem 'guard'
 end
 
 group :development do
@@ -33,4 +35,4 @@ group :development do
   gem 'quiet_assets'
 end
 
-gem 'rails_12factor', group: :production
+# gem 'rails_12factor', group: :production
