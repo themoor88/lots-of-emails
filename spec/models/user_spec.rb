@@ -3,7 +3,7 @@ require 'factory_girl'
 
 RSpec.describe User, type: :model do
   it "has a valid factory" do
-    FactoryGirl.create(:user).should be_valid
+    expect(FactoryGirl.create(:user)).to be_valid
   end
 
   it "orders by last name" do
