@@ -1,6 +1,11 @@
 require 'rails_helper'
+require 'factory_girl'
 
 RSpec.describe User, type: :model do
+  it "has a valid factory" do
+    FactoryGirl.create(:user).should be_valid
+  end
+
   it "orders by last name" do
     lindeman = User.create!(email: "wjkagzi@gmal.com", password: "heycools", first_name: "Andy", last_name: "Lindeman")
     chelimsky = User.create!(email: "hey@me.com", password: "whazzuos", first_name: "David", last_name: "Chelimsky")
