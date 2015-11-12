@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'factory_girl'
 
 RSpec.describe User, type: :model do
   it "has a valid factory" do
