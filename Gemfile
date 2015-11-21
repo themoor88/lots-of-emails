@@ -18,6 +18,7 @@ gem 'haml-rails'
 gem 'rails_admin'
 gem 'sass-rails', '~> 5.0'
 gem 'sendgrid-ruby'
+gem 'aasm'
 
 group :development, :test do
   gem 'byebug'
