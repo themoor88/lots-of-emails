@@ -56,6 +56,8 @@ GEM
       sass (>= 3.3.0)
     builder (3.2.2)
     byebug (6.0.2)
+    chart-js-rails (0.0.9)
+      railties (> 3.1)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -289,6 +291,7 @@ DEPENDENCIES
   better_errors
   bootstrap-sass
   byebug
+  chart-js-rails
   coffee-rails (~> 4.1.0)
   devise
   factory_girl_rails
@@ -313,4 +316,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.10.6
+   1.11.0

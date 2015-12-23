@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'annotate'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
+gem 'chart-js-rails'
 gem 'devise'
 gem 'figaro'
 gem 'haml-rails'
